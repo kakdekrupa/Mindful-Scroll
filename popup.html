@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header>
+      <h2>Mindful Scroll</h2>
+      <div id="status-indicator"></div>
+    </header>
+
+    <!-- State: Idle (Start Check-in) -->
+    <div id="idle-view" class="view">
+      <p>Ready to open a tab?</p>
+      <div class="input-group">
+        <label>Current Mood</label>
+        <select id="mood-select">
+          <option value="neutral">😐 Neutral</option>
+          <option value="anxious">😰 Anxious</option>
+          <option value="bored">😴 Bored</option>
+          <option value="focused">🧠 Focused</option>
+          <option value="tired">😫 Tired</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Intention</label>
+        <input type="text" id="intent-input" placeholder="e.g. Check news, research...">
+      </div>
+      <button id="start-btn">Start Session</button>
+    </div>
+
+    <!-- State: Active (End Check-in) -->
+    <div id="active-view" class="view hidden">
+      <p>Session in progress...</p>
+      <div class="timer" id="timer">00:00</div>
+      <button id="end-btn">End & Reflect</button>
+    </div>
+
+    <!-- State: Reflection (Post-Session) -->
+    <div id="reflection-view" class="view hidden">
+      <p>How do you feel now?</p>
+      <div class="input-group">
+        <label>Post-Session Mood</label>
+        <select id="post-mood-select">
+          <option value="neutral">😐 Neutral</option>
+          <option value="better">😌 Better</option>
+          <option value="worse">😫 Worse</option>
+          <option value="drained">🔋 Drained</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Did it help?</label>
+        <select id="help-select">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+          <option value="maybe">Maybe</option>
+        </select>
+      </div>
+      <button id="save-btn">Save Entry</button>
+    </div>
+
+    <!-- State: History -->
+    <div id="history-view" class="view hidden">
+      <h3>History</h3>
+      <div id="history-list"></div>
+      <button id="clear-btn" style="margin-top:10px; font-size:0.8em;">Clear Data</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
