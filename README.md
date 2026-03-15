@@ -34,17 +34,3 @@ The goal of this project is to promote awareness and reduce unconscious scrollin
 - **Chrome Storage API**
 
 ---
-
-## Project Structure
-
-mindful-scroll/
-│
-├── manifest.json
-├── popup.html
-├── popup.css
-├── popup.js
-├── background.js
-│
-└── icons/
-├── icon16.png
-└── icon48.png
